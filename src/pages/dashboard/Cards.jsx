@@ -1,5 +1,5 @@
 import { Monitor, UserRoundCheck, Users } from "lucide-react";
-import Card from "./Card";
+import Card from "../../components/Card";
 
 const Cards = () => {
   return (

@@ -1,8 +1,8 @@
 import { ChevronDown, Search } from "lucide-react";
 
-const Table = () => {
-  return (
-    <div className="bg-[#FFFFFF] rounded-2xl shadow-sm pl-6 pt-7 pr-11 mt-8">
+const AllCustomers = () => {
+    return(
+       <div className="bg-[#FFFFFF] rounded-2xl shadow-sm pl-6 pt-7 pr-11 mt-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
         <div>
@@ -13,7 +13,7 @@ const Table = () => {
         <div className="flex items-center gap-3">
           {/* Search */}
           <div className="flex items-center gap-2 bg-[#F9FBFF] rounded-lg px-3 py-2 w-56">
-            <Search/>
+            <Search />
             <input type="text" placeholder="Search" className="outline-none" />
           </div>
 
@@ -25,7 +25,6 @@ const Table = () => {
           </div>
         </div>
       </div>
-
       {/* Table Header */}
       <div className="grid grid-cols-6 gap-4 border-b border-[#FFFFFF] pb-3">
         <p className="text-xs text-[#B5B7C0]">Customer Name</p>
@@ -35,7 +34,6 @@ const Table = () => {
         <p className="text-xs text-[#B5B7C0]">Country</p>
         <p className="text-xs text-[#B5B7C0]">Status</p>
       </div>
-
 
       {/* Row 2 */}
       <div className="grid grid-cols-6 gap-4 items-center border-b border-[#FFFFFF] py-4">
@@ -135,7 +133,6 @@ const Table = () => {
         </div>
       </div>
     </div>
-  );
+    )
 };
-
-export default Table;
+export default AllCustomers;

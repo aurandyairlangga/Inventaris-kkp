@@ -7,7 +7,7 @@ import {
   Wallet,
 } from "lucide-react";
 
-import Menu from "./Menu";
+import Menu from "../Menu";
 
 
 // side bard kasih width tambahin
@@ -25,12 +25,12 @@ const Sidebar = () => {
 
       <div className="flex flex-col gap-8 text-[#9197B3] cursor-pointer">
         {/* Nanti ini kita looping */}
-        <Menu title="Dashboard" icon={<KeyRound />} />
-        <Menu title="Produk" icon={<Box />} />
-        <Menu title="Income" icon={<Wallet />} />
-        <Menu title="Customers" icon={<Wallet />} />
-        <Menu title="Promote" icon={<LayerArrowUp/>}/>
-        <Menu title="Help" icon={<MessageCircleQuestionMark/>}/>
+        <Menu to="/" title="Dashboard" icon={<KeyRound />} />
+        <Menu to="/produk" title="Produk" icon={<Box />} />
+        <Menu to="/income" title="Income" icon={<Wallet />} />
+        <Menu to="/customers" title="Customers" icon={<Wallet />} />
+        <Menu to="/promote" title="Promote" icon={<LayerArrowUp/>}/>
+        <Menu to="/help" title="Help" icon={<MessageCircleQuestionMark/>}/>
       </div>
     </div>
   );
