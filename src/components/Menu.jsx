@@ -8,7 +8,7 @@ const Menu = ({ title, icon, to = "/" }) => {
       className={({ isActive }) =>
         cn(
           "flex items-center p-1.5 gap-3.5 text-lg  hover:bg-indigo-700 hover:text-white rounded-lg",
-          isActive ? "text-green-500" : "",
+          isActive ? "text-[#DC143C]" : "",
         )
       }
     >

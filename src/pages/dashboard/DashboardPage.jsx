@@ -1,8 +1,5 @@
 
-import Sidebar from "../../components/layout/Sidebar";
 
-import Button from "../../components/Button";
-import Search from "../../components/Search";
 import AllCustomers from "../AllCustomers";
 import Cards from "./Cards";
 

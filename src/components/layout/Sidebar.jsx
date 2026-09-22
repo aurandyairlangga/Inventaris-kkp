@@ -17,10 +17,10 @@ import Menu from "../Menu";
 
 const Sidebar = () => {
   return (
-    <div className="h-full bg-[#FFFFFF] p-6 w-80 justify-center">
+    <div className="h-full bg-[#000000] p-6 w-80 justify-center">
       <div className="flex items-center gap-2 text-2xl mb-16">
         <Bolt/>
-        <h1 className="font-semibold">Dashboard</h1>
+        <h1 className="font-semibold text-[#DC143C]">Dashboard</h1>
       </div>
 
       <div className="flex flex-col gap-8 text-[#9197B3] cursor-pointer">
