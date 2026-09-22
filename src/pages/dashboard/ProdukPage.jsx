@@ -16,13 +16,12 @@ const ProdukPage = () => {
   const [listData, setListData] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const onClose = () => setShowModal(false);
-  
+
   const onAddProduk = (data) => {
     setListData((prev) => {
       return [...prev, data];
     });
   };
-
 
   return (
     <div className="p-6">
@@ -31,7 +30,7 @@ const ProdukPage = () => {
         <p className="text-xl font-semibold text-gray-900">Produk</p>
         <button
           onClick={() => setShowModal(true)}
-          className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+          className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors cursor-pointer"
         >
           <Plus size={16} />
           <p>Tambah produk</p>
@@ -39,9 +38,9 @@ const ProdukPage = () => {
       </div>
 
       {/* Total produk */}
-      <div className="mb-6 flex max-w-xs items-center gap-3 rounded-xl border border-gray-200 bg-[#FFD700] p-4">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50">
-          <Package size={20} className="text-[#808080]" />
+      <div className="mb-6 flex max-w-xs items-center gap-3 rounded-xl border border-gray-200 bg-white p-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50">
+          <Package size={20} className="text-red-600" />
         </div>
         <div>
           <p className="text-xs text-gray-500">Total produk</p>
@@ -52,23 +51,31 @@ const ProdukPage = () => {
       {/* Kategori */}
       <p className="mb-2 text-xs font-medium text-gray-500">Kategori</p>
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-xl border bg-amber-400 border-gray-200 bg-[#7FFF00] p-4 text-center">
-          <Monitor size={22} className="mx-auto mb-2 text-gray-600" />
+        <div className="rounded-xl border bg-white border-gray-200 p-4 text-center">
+          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50">
+            <Monitor size={22} className=" text-blue-600  " />
+          </div>
           <p className="text-sm text-gray-700">PC</p>
           <p className="text-base font-semibold text-gray-900">32</p>
         </div>
-        <div className="rounded-xl border border-gray-200 bg-[#6495ED] p-4 text-center">
-          <Printer size={22} className="mx-auto mb-2 text-gray-600" />
+        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
+          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50">
+            <Printer size={22} className=" text-violet-600" />
+          </div>
           <p className="text-sm text-gray-700">Printer</p>
           <p className="text-base font-semibold text-gray-900">14</p>
         </div>
-        <div className="rounded-xl border border-gray-200 bg-[#ADFF2F] p-4 text-center">
-          <Mouse size={22} className="mx-auto mb-2 text-gray-600" />
+        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
+          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50">
+            <Mouse size={22} className=" text-emerald-600" />
+          </div>
           <p className="text-sm text-gray-700">Aksesoris</p>
           <p className="text-base font-semibold text-gray-900">55</p>
         </div>
-        <div className="rounded-xl border border-gray-200 bg-[#FF4500] p-4 text-center">
-          <NotebookPen size={22} className="mx-auto mb-2 text-gray-600" />
+        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
+          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50">
+            <NotebookPen size={22} className=" text-amber-600 " />
+          </div>
           <p className="text-sm text-gray-700">ATK</p>
           <p className="text-base font-semibold text-gray-900">43</p>
         </div>
@@ -95,7 +102,10 @@ const ProdukPage = () => {
 
         {listData.map(({ kode, namaProduk, kategori, stok }) => {
           return (
-            <div key={kode} className="flex items-center border-b border-gray-100 px-4 py-3 text-sm">
+            <div
+              key={kode}
+              className="flex items-center border-b border-gray-100 px-4 py-3 text-sm"
+            >
               <p className="w-24 text-gray-700">{kode}</p>
               <p className="flex-1 text-gray-900">{namaProduk}</p>
               <div className="w-28">
@@ -120,7 +130,11 @@ const ProdukPage = () => {
       </div>
 
       {/* modal */}
-      <Modal showModal={showModal} onClose={setShowModal} onKirim={onAddProduk} />
+      <Modal
+        showModal={showModal}
+        onClose={setShowModal}
+        onKirim={onAddProduk}
+      />
     </div>
   );
 };

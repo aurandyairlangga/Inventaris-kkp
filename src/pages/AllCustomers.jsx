@@ -55,7 +55,7 @@ const AllCustomers = () => {
         <p className="text-sm text-[#292D32]">Adobe</p>
         <p className="text-sm text-[#292D32]">(302) 555-0107</p>
         <p className="text-sm text-[#292D32]">ronald@adobe.com</p>
-        <p className="text-sm text-[#292D32]">Israel</p>
+        <p className="text-sm text-[#292D32]">Australia</p>
         <div>
           <p className="text-xs font-medium px-3 py-1 rounded-full bg-rose-50 text-[#DF0404] w-fit">
             Inactive
