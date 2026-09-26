@@ -10,11 +10,6 @@ import {
 import Menu from "../Menu";
 
 
-// side bard kasih width tambahin
-// kontent body kasih padding
-// Font size sidebar coba dikecilin dikit
-
-
 const Sidebar = () => {
   return (
     <div className="h-full bg-[#111111] p-6 w-80 justify-center">
@@ -27,7 +22,7 @@ const Sidebar = () => {
         {/* Nanti ini kita looping */}
         <Menu to="/" title="Dashboard" icon={<KeyRound />} />
         <Menu to="/produk" title="Produk" icon={<Box />} />
-        <Menu to="/income" title="Income" icon={<Wallet />} />
+        <Menu to="/inventaris" title="Inventaris" icon={<Wallet />} />
         <Menu to="/customers" title="Customers" icon={<Wallet />} />
         <Menu to="/promote" title="Promote" icon={<LayerArrowUp/>}/>
         <Menu to="/help" title="Help" icon={<MessageCircleQuestionMark/>}/>

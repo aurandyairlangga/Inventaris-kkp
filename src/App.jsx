@@ -15,7 +15,7 @@ const App = () => {
           <Route path="customers"></Route> 
           <Route path="promote"></Route> 
           <Route path="help"></Route> 
-          <Route path="income">
+          <Route path="inventaris">
             <Route index element={<IncomePage />} />
           </Route>
         </Route>
