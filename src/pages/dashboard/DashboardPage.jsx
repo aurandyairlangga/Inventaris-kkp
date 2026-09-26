@@ -1,7 +1,7 @@
 
 
-import AllCustomers from "../AllCustomers";
-import Cards from "./Cards";
+import AllCustomers from "../../features/dashboard/AllCustomers";
+import Cards from "../../components/Cards";
 
 const DashboardPage = () => {
   return (

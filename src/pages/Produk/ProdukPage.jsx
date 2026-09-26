@@ -1,3 +1,4 @@
+import Modal from "@/features/produk/Modal";
 import {
   Plus,
   Pencil,
@@ -10,7 +11,7 @@ import {
   Package,
 } from "lucide-react";
 import { useState } from "react";
-import Modal from "./form/Modal";
+
 
 const ProdukPage = () => {
   const [listData, setListData] = useState([]);

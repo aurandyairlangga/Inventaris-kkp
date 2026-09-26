@@ -6,8 +6,9 @@ import {
   MessageCircleQuestionMark,
   Wallet,
 } from "lucide-react";
+import Menu from "./Menu";
 
-import Menu from "../Menu";
+
 
 
 const Sidebar = () => {
