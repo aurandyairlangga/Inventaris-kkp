@@ -22,7 +22,7 @@ const Sidebar = () => {
       <div className="flex flex-col gap-8 text-[#9197B3] cursor-pointer">
         {/* Nanti ini kita looping */}
         <Menu to="/" title="Dashboard" icon={<KeyRound />} />
-        <Menu to="/produk" title="Produk" icon={<Box />} />
+        <Menu to="/product" title="Product" icon={<Box />} />
         <Menu to="/inventaris" title="Inventaris" icon={<Wallet />} />
         <Menu to="/customers" title="Customers" icon={<Wallet />} />
         <Menu to="/promote" title="Promote" icon={<LayerArrowUp/>}/>

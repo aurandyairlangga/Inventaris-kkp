@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const Modal = ({
+const CreateProduct = ({
   showModal = false,
   onClose = () => {},
-  onKirim = () => {},
+  onAdd = () => {},
 }) => {
   const [status, setOnStatus] = useState({
     kode: "PRD-001",
@@ -27,7 +27,7 @@ const Modal = ({
 
   const onSubmit = () => {
     console.log("formModal", status);
-    onKirim(status);
+    onAdd(status);
     onClose();
   };
 
@@ -106,4 +106,4 @@ const Modal = ({
   );
 };
 
-export default Modal;
+export default CreateProduct;

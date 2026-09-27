@@ -1,4 +1,3 @@
-import Modal from "@/features/produk/Modal";
 import {
   Plus,
   Pencil,
@@ -11,15 +10,16 @@ import {
   Package,
 } from "lucide-react";
 import { useState } from "react";
+import CategoryCards from "./CategoryCards";
+import CreateProduct from "./modal/CreateProduct";
 
-
-const ProdukPage = () => {
-  const [listData, setListData] = useState([]);
+const Product = () => {
+  const [productList, setProductList] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const onClose = () => setShowModal(false);
 
   const onAddProduk = (data) => {
-    setListData((prev) => {
+    setProductList((prev) => {
       return [...prev, data];
     });
   };
@@ -50,37 +50,7 @@ const ProdukPage = () => {
       </div>
 
       {/* Kategori */}
-      <p className="mb-2 text-xs font-medium text-gray-500">Kategori</p>
-      <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-xl border bg-white border-gray-200 p-4 text-center">
-          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50">
-            <Monitor size={22} className=" text-blue-600  " />
-          </div>
-          <p className="text-sm text-gray-700">PC</p>
-          <p className="text-base font-semibold text-gray-900">32</p>
-        </div>
-        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
-          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50">
-            <Printer size={22} className=" text-violet-600" />
-          </div>
-          <p className="text-sm text-gray-700">Printer</p>
-          <p className="text-base font-semibold text-gray-900">14</p>
-        </div>
-        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
-          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50">
-            <Mouse size={22} className=" text-emerald-600" />
-          </div>
-          <p className="text-sm text-gray-700">Aksesoris</p>
-          <p className="text-base font-semibold text-gray-900">55</p>
-        </div>
-        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
-          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50">
-            <NotebookPen size={22} className=" text-amber-600 " />
-          </div>
-          <p className="text-sm text-gray-700">ATK</p>
-          <p className="text-base font-semibold text-gray-900">43</p>
-        </div>
-      </div>
+      <CategoryCards />
 
       {/* Search */}
       <div className="mb-3 flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 max-w-sm">
@@ -101,7 +71,7 @@ const ProdukPage = () => {
           <p className="w-16 text-right">Edit/Delete</p>
         </div>
 
-        {listData.map(({ kode, namaProduk, kategori, stok }) => {
+        {productList.map(({ kode, namaProduk, kategori, stok }) => {
           return (
             <div
               key={kode}
@@ -131,12 +101,12 @@ const ProdukPage = () => {
       </div>
 
       {/* modal */}
-      <Modal
+      <CreateProduct
         showModal={showModal}
         onClose={setShowModal}
-        onKirim={onAddProduk}
+        onAdd={onAddProduk}
       />
     </div>
   );
 };
-export default ProdukPage;
+export default Product;
