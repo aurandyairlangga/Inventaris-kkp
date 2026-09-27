@@ -3,15 +3,12 @@ import {
   Pencil,
   Trash2,
   Search,
-  Monitor,
-  Printer,
-  Mouse,
-  NotebookPen,
   Package,
 } from "lucide-react";
 import { useState } from "react";
 import CategoryCards from "./CategoryCards";
 import CreateProduct from "./modal/CreateProduct";
+import ProductCard from "./ProductCard";
 
 const Product = () => {
   const [productList, setProductList] = useState([]);
@@ -39,7 +36,7 @@ const Product = () => {
       </div>
 
       {/* Total produk */}
-      <div className="mb-6 flex max-w-xs items-center gap-3 rounded-xl border border-gray-200 bg-white p-4">
+      <ProductCard className="mb-6 flex max-w-xs items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50">
           <Package size={20} className="text-red-600" />
         </div>
@@ -47,7 +44,7 @@ const Product = () => {
           <p className="text-xs text-gray-500">Total produk</p>
           <p className="text-lg font-semibold text-gray-900">144 unit</p>
         </div>
-      </div>
+      </ProductCard>
 
       {/* Kategori */}
       <CategoryCards />

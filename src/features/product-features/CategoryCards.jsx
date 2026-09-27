@@ -1,10 +1,11 @@
+import CardsProduct from "@/features/product-features/ProductCard";
 import cn from "@/utils/cn";
 import { Monitor, Mouse, NotebookPen, Printer } from "lucide-react";
 
 const categories = [
   {
     name: "PC",
-    icon: <Monitor className="text-blue-600"/>,
+    icon: <Monitor className="text-blue-600" />,
     bgIcon: "bg-blue-50",
     total: 32,
   },
@@ -16,7 +17,7 @@ const categories = [
   },
   {
     name: "Aksesoris",
-    icon: <Mouse className="text-emerald-600"/>,
+    icon: <Mouse className="text-emerald-600" />,
     bgIcon: "bg-emerald-50",
     total: 55,
   },
@@ -34,10 +35,11 @@ const CategoryCards = () => {
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {categories.map(({ name, icon, bgIcon, total }) => {
           return (
-            <div className="rounded-xl border bg-white border-gray-200 p-4 text-center">
+            <CardsProduct key={name}>
               <div
                 className={cn(
-                  "mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl",bgIcon
+                  "mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl",
+                  bgIcon,
                 )}
               >
                 {/* INI ICON */}
@@ -45,7 +47,7 @@ const CategoryCards = () => {
               </div>
               <p className="text-sm text-gray-700">{name}</p>
               <p className="text-base font-semibold text-gray-900">{total}</p>
-            </div>
+            </CardsProduct>
           );
         })}
       </div>
