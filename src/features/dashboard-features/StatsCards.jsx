@@ -1,9 +1,10 @@
 import { Monitor, UserRoundCheck, Users } from "lucide-react";
 import Card from "@/components/Card";
+import DashboardCard from "./DashboardCard";
 
 const StatsCards = () => {
   return (
-    <div className="bg-[#FFFFFF] rounded-2xl shadow-sm pl-5 pt-7 pb-7 pr-28 ml-0.5 mt-6 flex flex-col sm:flex-row items-center gap-28 sm:gap-12 justify-between">
+    <DashboardCard className="pl-5 pt-7 pb-7 pr-28 ml-0.5 mt-6 flex flex-col sm:flex-row items-center gap-28 sm:gap-12 justify-between">
       <Card
         icon={Users}
         iconColor="text-[#00AC4F]"
@@ -31,7 +32,7 @@ const StatsCards = () => {
       />
       
    
-    </div>
+    </DashboardCard>
   );
 };
 

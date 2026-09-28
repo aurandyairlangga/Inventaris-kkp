@@ -28,6 +28,7 @@ const categories = [
     total: 43,
   },
 ];
+
 const CategoryCards = () => {
   return (
     <div>

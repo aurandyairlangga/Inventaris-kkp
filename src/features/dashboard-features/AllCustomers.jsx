@@ -1,8 +1,9 @@
 import { ChevronDown, Search } from "lucide-react";
+import DashboardCard from "./DashboardCard";
 
 const AllCustomers = () => {
-    return(
-       <div className="bg-[#FFFFFF] rounded-2xl shadow-sm pl-6 pt-7 pr-11 mt-8">
+  return (
+    <DashboardCard className="pl-6 pt-7 pr-11 mt-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
         <div>
@@ -132,7 +133,7 @@ const AllCustomers = () => {
           </p>
         </div>
       </div>
-    </div>
-    )
+    </DashboardCard>
+  );
 };
 export default AllCustomers;
