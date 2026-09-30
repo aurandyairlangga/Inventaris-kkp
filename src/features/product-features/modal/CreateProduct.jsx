@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import { useState } from "react";
 
 const CreateProduct = ({
@@ -84,21 +85,16 @@ const CreateProduct = ({
           </div>
 
           <div className="flex gap-3">
-            <button
+            <Button
+              variant="secondary"
+              className="w-full"
               onClick={() => onClose(false)}
-              type="button"
-              className="w-full rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white cursor-pointer  hover:bg-blue-800 transition-colors "
             >
-              Cancel
-            </button>
-
-            <button
-              onClick={onSubmit}
-              type="button"
-              className="w-full rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white cursor-pointer hover:bg-blue-800 transition-colors"
-            >
-              Submit
-            </button>
+              Batal
+            </Button>
+            <Button className="w-full" onClick={onSubmit}>
+              Simpan
+            </Button>
           </div>
         </div>
       </div>

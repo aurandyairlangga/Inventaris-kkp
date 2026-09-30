@@ -1,14 +1,9 @@
-import {
-  Plus,
-  Pencil,
-  Trash2,
-  Search,
-  Package,
-} from "lucide-react";
+import { Plus, Pencil, Trash2, Search, Package } from "lucide-react";
 import { useState } from "react";
 import CategoryCards from "./CategoryCards";
 import CreateProduct from "./modal/CreateProduct";
 import ProductCard from "./ProductCard";
+import Button from "@/components/Button";
 
 const Product = () => {
   const [productList, setProductList] = useState([]);
@@ -26,13 +21,13 @@ const Product = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <p className="text-xl font-semibold text-gray-900">Produk</p>
-        <button
+        <Button
           onClick={() => setShowModal(true)}
-          className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors cursor-pointer"
+          className="flex items-center gap-2"
         >
           <Plus size={16} />
-          <p>Tambah produk</p>
-        </button>
+          Tambah produk
+        </Button>
       </div>
 
       {/* Total produk */}
