@@ -1,4 +1,4 @@
-import CardsProduct from "@/features/product-features/ProductCard";
+import Cards from "@/components/Cards";
 import cn from "@/utils/cn";
 import { Monitor, Mouse, NotebookPen, Printer } from "lucide-react";
 
@@ -36,7 +36,7 @@ const CategoryCards = () => {
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {categories.map(({ name, icon, bgIcon, total }) => {
           return (
-            <CardsProduct key={name}>
+            <Cards key={name}>
               <div
                 className={cn(
                   "mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl",
@@ -48,7 +48,7 @@ const CategoryCards = () => {
               </div>
               <p className="text-sm text-gray-700">{name}</p>
               <p className="text-base font-semibold text-gray-900">{total}</p>
-            </CardsProduct>
+            </Cards>
           );
         })}
       </div>

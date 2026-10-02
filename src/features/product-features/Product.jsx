@@ -2,7 +2,7 @@ import { Plus, Pencil, Trash2, Search, Package } from "lucide-react";
 import { useState } from "react";
 import CategoryCards from "./CategoryCards";
 import CreateProduct from "./modal/CreateProduct";
-import ProductCard from "./ProductCard";
+import Cards from "../../components/Cards";
 import Button from "@/components/Button";
 
 const Product = () => {
@@ -31,7 +31,7 @@ const Product = () => {
       </div>
 
       {/* Total produk */}
-      <ProductCard className="mb-6 flex max-w-xs items-center gap-3">
+      <Cards className="mb-6 flex max-w-xs items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50">
           <Package size={20} className="text-red-600" />
         </div>
@@ -39,7 +39,7 @@ const Product = () => {
           <p className="text-xs text-gray-500">Total produk</p>
           <p className="text-lg font-semibold text-gray-900">144 unit</p>
         </div>
-      </ProductCard>
+      </Cards>
 
       {/* Kategori */}
       <CategoryCards />

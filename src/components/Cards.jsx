@@ -1,6 +1,6 @@
 import cn from "@/utils/cn";
 
-const ProductCard = ({children="",className=""}) => {
+const Cards = ({children="",className=""}) => {
     return(
         <div className={cn("rounded-xl border bg-white border-gray-200 p-4 text-center",className)}>
         {children}
@@ -8,4 +8,4 @@ const ProductCard = ({children="",className=""}) => {
     )
 }
 
-export default ProductCard;
+export default Cards;

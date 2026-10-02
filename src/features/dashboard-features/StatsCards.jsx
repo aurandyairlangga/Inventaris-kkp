@@ -1,64 +1,71 @@
-import { Monitor, UserRoundCheck, Users } from "lucide-react";
-import DashboardCard from "./DashboardCard";
+import Cards from "@/components/Cards";
 import cn from "@/utils/cn";
+import {
+  Package,
+  CheckCircle2,
+  ArrowLeftRight,
+  Wrench,
+  XCircle,
+} from "lucide-react";
 
-const stats = [
+// Satu objek = satu kotak. Ada 5 objek, jadi muncul 5 kotak.
+const cards = [
   {
-    icon: <Users className="text-[#00AC4F]" />,
-    title: "Total customers",
-    total: "5,423",
-    presentaseColor: "text-[#00AC4F]",
-    presentase: "16%",
-    status: "this month",
+    name: "Total produk",
+    icon: <Package className="text-red-600" />,
+    bgIcon: "bg-red-50",
+    total: 144,
   },
   {
-    icon: <UserRoundCheck className="text-[#00AC4F]" />,
-    title: "Members",
-    total: "1,893",
-    presentaseColor: "text-[#D0004B]",
-    presentase: "1%",
-    status: "this month",
+    name: "Tersedia",
+    icon: <CheckCircle2 className="text-emerald-600" />,
+    bgIcon: "bg-emerald-50",
+    total: 100,
   },
   {
-    icon: <Monitor className="text-[#00AC4F]" />,
-    title: "Active Now",
-    total: "189",
-    status: "Users",
+    name: "Dipinjam",
+    icon: <ArrowLeftRight className="text-blue-600" />,
+    bgIcon: "bg-blue-50",
+    total: 30,
+  },
+  {
+    name: "Perbaikan",
+    icon: <Wrench className="text-amber-600" />,
+    bgIcon: "bg-amber-50",
+    total: 10,
+  },
+  {
+    name: "Rusak",
+    icon: <XCircle className="text-gray-600" />,
+    bgIcon: "bg-gray-100",
+    total: 4,
   },
 ];
+
 const StatsCards = () => {
   return (
-    <DashboardCard className="pl-5 pt-7 pb-7 pr-28 ml-0.5 mt-6 flex flex-col sm:flex-row items-center gap-28 sm:gap-12 justify-between">
-      {stats.map(
-        ({ icon, title, total, presentaseColor, presentase, status }) => {
+    <div className="mt-8">
+      <p className="mb-2 text-xs font-medium text-gray-500">Ringkasan</p>
+      {/* 2 kolom di layar kecil, 5 kolom di layar lebar */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+        {cards.map(({ name, icon, bgIcon, total }) => {
           return (
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-emerald-50 flex items-center justify-center">
+            <Cards key={name}>
+              <div
+                className={cn(
+                  "mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl",
+                  bgIcon,
+                )}
+              >
                 {icon}
               </div>
-
-              <div>
-                <p className="text-[#ACACAC]">{title}</p>
-                <p className="text-2xl font-semibold text-[#333333]">{total}</p>
-                <div className="flex gap-1">
-                  <p
-                    className={cn(
-                      "text-xs text-[#00AC4F] flex items-center gap-1 mt-0.5",
-                      presentaseColor,
-                    )}
-                  >
-                    {presentase}
-                  </p>
-                  <p className="text-xs flex items-center gap-1 mt-0.5">
-                    {status}
-                  </p>
-                </div>
-              </div>
-            </div>
+              <p className="text-sm text-gray-700">{name}</p>
+              <p className="text-base font-semibold text-gray-900">{total}</p>
+            </Cards>
           );
-        },
-      )}
-    </DashboardCard>
+        })}
+      </div>
+    </div>
   );
 };
 

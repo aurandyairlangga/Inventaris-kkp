@@ -90,7 +90,7 @@ const CreateProduct = ({
               className="w-full"
               onClick={() => onClose(false)}
             >
-              Batal
+              Batal 
             </Button>
             <Button className="w-full" onClick={onSubmit}>
               Simpan

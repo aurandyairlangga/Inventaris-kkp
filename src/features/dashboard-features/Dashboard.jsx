@@ -15,6 +15,7 @@ const Dashboard = () => {
         <Search />
       </div>
 
+      {/* ini card dashboard */}
       <StatsCards />
 
       {/* CARD: All Customers */}
