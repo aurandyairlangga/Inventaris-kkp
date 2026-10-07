@@ -1,10 +1,11 @@
 import {
+  ArrowLeftRight,
   Bolt,
   Box,
+  Boxes,
   KeyRound,
-  LayerArrowUp,
   MessageCircleQuestionMark,
-  Wallet,
+  Wrench,
 } from "lucide-react";
 import Menu from "./Menu";
 
@@ -23,9 +24,9 @@ const Sidebar = () => {
         {/* Nanti ini kita looping */}
         <Menu to="/" title="Dashboard" icon={<KeyRound />} />
         <Menu to="/product" title="Product" icon={<Box />} />
-        <Menu to="/inventaris" title="Inventaris" icon={<Wallet />} />
-        <Menu to="/customers" title="Customers" icon={<Wallet />} />
-        <Menu to="/promote" title="Promote" icon={<LayerArrowUp/>}/>
+        <Menu to="/dataAsset" title="Data Asset " icon={<Boxes />} />
+        <Menu to="/borrowing" title="Borrowing" icon={<ArrowLeftRight />} />
+        <Menu to="/maintenance" title="Maintenance" icon={<Wrench/>}/>
         <Menu to="/help" title="Help" icon={<MessageCircleQuestionMark/>}/>
       </div>
     </div>

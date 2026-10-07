@@ -34,12 +34,6 @@ const cards = [
     bgIcon: "bg-amber-50",
     total: 10,
   },
-  {
-    name: "Rusak",
-    icon: <XCircle className="text-gray-600" />,
-    bgIcon: "bg-gray-100",
-    total: 4,
-  },
 ];
 
 const StatsCards = () => {
@@ -47,7 +41,7 @@ const StatsCards = () => {
     <div className="mt-8">
       <p className="mb-2 text-xs font-medium text-gray-500">Ringkasan</p>
       {/* 2 kolom di layar kecil, 5 kolom di layar lebar */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {cards.map(({ name, icon, bgIcon, total }) => {
           return (
             <Cards key={name}>

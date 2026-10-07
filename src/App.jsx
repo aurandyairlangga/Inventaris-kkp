@@ -11,10 +11,10 @@ const App = () => {
         <Route element={<Layout />}>
           <Route index element={<DashboardPage />} />
           <Route path="product" element={<ProductPage />} />
-          <Route path="customers"></Route>
-          <Route path="promote"></Route>
+          <Route path="dataAsset"></Route>
+          <Route path="borrowing"></Route>
+          <Route path="maintenance"></Route>
           <Route path="help"></Route>
-          <Route path="inventaris"></Route>
         </Route>
       </Routes>
     </BrowserRouter>

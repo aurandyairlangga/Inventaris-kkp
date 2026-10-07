@@ -1,7 +1,8 @@
 import Button from "@/components/Button";
+import Modal from "@/components/Modal";
 import { useState } from "react";
 
-const CreateProduct = ({
+const CreatePenerimaan = ({
   showModal = false,
   onClose = () => {},
   onAdd = () => {},
@@ -11,6 +12,11 @@ const CreateProduct = ({
     namaProduk: "PC Rakitan i5",
     kategori: "PC",
     stok: "6",
+
+    // jenisAsal: "Pembelian",
+    // asal: "",
+    // tanggal: new Date().toISOString().slice(0, 10),
+    // lokasi: "Ruang IT",
   });
 
   console.log(status);
@@ -28,19 +34,19 @@ const CreateProduct = ({
 
   const onSubmit = () => {
     console.log("formModal", status);
-    onAdd(status);
+    onAdd({ ...status, id: Date.now() });
     onClose();
   };
 
   return (
     showModal && (
-      <div className="fixed bg-black/20 h-dvh w-full top-0 left-0 flex items-center justify-center ">
-        <div className="w-full max-w-sm rounded-[28px] bg-white p-5 flex flex-col gap-4 ">
-          <h2 className="text-lg font-semibold text-gray-900">Tambah Produk</h2>
+      <Modal>
+        <h2 className="text-lg font-semibold text-gray-900">Tambah Produk</h2>
+        <div className="grid grid-cols-2 gap-8">
           <div>
-            <p className="mb-1 block text-sm text-gray-800">Kode</p>
+            <p className="mb-1 block text-sm text-gray-800">No Faktur</p>
             <input
-              name="kode"
+              name="noFaktur"
               onChange={onChangeForm}
               placeholder="isi kode"
               className="w-full rounded-xl border border-gray-200 bg-gray-100 px-4 py-3 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-gray-400"
@@ -48,9 +54,9 @@ const CreateProduct = ({
           </div>
 
           <div>
-            <p className="mb-1 block text-sm text-gray-800">Nama Produk</p>
+            <p className="mb-1 block text-sm text-gray-800">Nama Barang</p>
             <input
-              name="namaProduk"
+              name="namaBarang"
               onChange={onChangeForm}
               placeholder="Masukan produk anda...."
               className="w-full rounded-xl border border-gray-200 bg-gray-100 px-4 py-3 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-gray-400"
@@ -75,31 +81,77 @@ const CreateProduct = ({
           </div>
 
           <div>
-            <p className="mb-1 block text-sm text-gray-800">Stok</p>
+            <p className="mb-1 block text-sm text-gray-800">Jumlah Unit</p>
             <input
-              name="stok"
+              name="jumlah"
+              type="number"
+              min="1"
               onChange={onChangeForm}
-              placeholder="isi stok..."
+              placeholder="isi jumlah..."
               className="w-full rounded-xl border border-gray-200 bg-gray-100 px-4 py-3 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-gray-400"
             />
           </div>
 
-          <div className="flex gap-3">
-            <Button
-              variant="secondary"
-              className="w-full"
-              onClick={() => onClose(false)}
+          <div>
+            <p className="mb-1 block text-sm text-gray-800">Jenis Asal</p>
+            <select
+              name="jenisAsal"
+              onChange={onChangeForm}
+              className="w-full rounded-xl border border-gray-200 bg-gray-100 px-4 py-3 text-sm text-gray-800 outline-none focus:border-gray-400 cursor-pointer"
             >
-              Batal 
-            </Button>
-            <Button className="w-full" onClick={onSubmit}>
-              Simpan
-            </Button>
+              <option value="Pembelian">PEMBELIAN</option>
+              <option value="Pindahan">PINDAHAN</option>
+            </select>
+          </div>
+
+          <div>
+            <p className="mb-1 block text-sm text-gray-800">Asal/Supplier</p>
+            <input
+              name="asal"
+              onChange={onChangeForm}
+              placeholder="Masukan produk anda...."
+              className="w-full rounded-xl border border-gray-200 bg-gray-100 px-4 py-3 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-gray-400"
+            />
+          </div>
+
+          <div>
+            <p className="mb-1 block text-sm text-gray-800">Tanggal Terima</p>
+            <input
+              name="tanggal"
+              type="date"
+              onChange={onChangeForm}
+              className="w-full rounded-xl border border-gray-200 bg-gray-100 px-4 py-3 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-gray-400"
+            />
+          </div>
+
+          <div>
+            <p className="mb-1 block text-sm text-gray-800">Lokasi Awal</p>
+            <select
+              name="lokasi"
+              onChange={onChangeForm}
+              className="w-full rounded-xl border border-gray-200 bg-gray-100 px-4 py-3 text-sm text-gray-800 outline-none focus:border-gray-400 cursor-pointer"
+            >
+              <option value="Ruang IT">RUANG IT</option>
+              <option value="Gudang">GUDANG</option>
+            </select>
           </div>
         </div>
-      </div>
+
+        <div className="flex gap-3">
+          <Button
+            variant="secondary"
+            className="w-full"
+            onClick={() => onClose(false)}
+          >
+            Batal
+          </Button>
+          <Button className="w-full" onClick={onSubmit}>
+            Simpan
+          </Button>
+        </div>
+      </Modal>
     )
   );
 };
 
-export default CreateProduct;
+export default CreatePenerimaan;

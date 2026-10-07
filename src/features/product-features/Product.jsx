@@ -4,16 +4,43 @@ import CategoryCards from "./CategoryCards";
 import CreateProduct from "./modal/CreateProduct";
 import Cards from "../../components/Cards";
 import Button from "@/components/Button";
+import Modal from "@/components/Modal";
+import DeleteProduct from "./modal/DeleteProduct";
 
 const Product = () => {
   const [productList, setProductList] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
   const onClose = () => setShowModal(false);
+  const [selectProductId, setSelectProductId] = useState(null);
 
   const onAddProduk = (data) => {
     setProductList((prev) => {
       return [...prev, data];
     });
+  };
+
+  const onSelectProduct = (kode) => {};
+
+  const onClickDelete = (kode) => {
+    console.log("kode", kode);
+    setSelectProductId(kode);
+    setShowModalDelete(true);
+  };
+
+  const onDeleteProduct = () => {
+    setProductList((prev) => {
+      const hasil = prev.filter((status) => {
+        console.log(status.id, selectProductId);
+        if (status.id !== selectProductId) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      return hasil;
+    });
+    setShowModalDelete(false);
   };
 
   return (
@@ -56,17 +83,20 @@ const Product = () => {
       <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
         {/* Header baris */}
         <div className="flex items-center border-b border-gray-200 px-4 py-3 text-xs font-medium text-gray-500">
-          <p className="w-24">Kode</p>
+          <p className="w-24">Tanggal</p>
+          <p className="w-24">No Faktur</p>
           <p className="flex-1">Nama produk</p>
           <p className="w-28">Kategori</p>
-          <p className="w-16">Stok</p>
-          <p className="w-16 text-right">Edit/Delete</p>
+          <p className="w-28">Jumlah</p>
+          <p className="w-28">Asal</p>
+          <p className="w-28">Kode Barang</p>
+          <p className="w-16 text-right">Aksi</p>
         </div>
 
-        {productList.map(({ kode, namaProduk, kategori, stok }) => {
+        {productList.map(({ id, kode, namaProduk, kategori, stok }) => {
           return (
             <div
-              key={kode}
+              key={id}
               className="flex items-center border-b border-gray-100 px-4 py-3 text-sm"
             >
               <p className="w-24 text-gray-700">{kode}</p>
@@ -78,14 +108,20 @@ const Product = () => {
               </div>
               <p className="w-16 text-gray-700">{stok}</p>
               <div className="flex w-16 items-center justify-end gap-3 text-gray-400">
-                <Pencil
-                  size={16}
-                  className="hover:text-blue-600 cursor-pointer"
-                />
-                <Trash2
-                  size={16}
+                <button
+                  type="button"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-blue-50 hover:text-blue-600 cursor-pointer"
+                >
+                  <Pencil size={16} />
+                </button>
+
+                <button
+                  onClick={() => onClickDelete(id)}
+                  type="button"
                   className="hover:text-red-600 cursor-pointer"
-                />
+                >
+                  <Trash2 size={16} />
+                </button>
               </div>
             </div>
           );
@@ -97,6 +133,11 @@ const Product = () => {
         showModal={showModal}
         onClose={setShowModal}
         onAdd={onAddProduk}
+      />
+      <DeleteProduct
+        showModalDelete={showModalDelete}
+        closeModalDelete={setShowModalDelete}
+        onDelete={onDeleteProduct}
       />
     </div>
   );

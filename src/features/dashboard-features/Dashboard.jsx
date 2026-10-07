@@ -9,7 +9,6 @@ const Dashboard = () => {
         <div className="flex ml-20 font-medium text-2xl">
           <h1>Hallo Aurandy</h1>
           <h1>👋🏻</h1>
-          <p></p>
         </div>
         {/* Bikin jadi component Search Input */}
         <Search />
