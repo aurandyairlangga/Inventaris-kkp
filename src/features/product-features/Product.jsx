@@ -93,28 +93,39 @@ const Product = () => {
           <p className="w-16 text-right">Aksi</p>
         </div>
 
-        {productList.map(({ id, kode, namaProduk, kategori, stok }) => {
-          return (
+        {productList.map(
+          ({
+            id,
+            kategori,
+            noFaktur,
+            jumlahUnit,
+            asal,
+            tanggal,
+            lokasi,
+            namaBarang,
+          }) => (
             <div
               key={id}
               className="flex items-center border-b border-gray-100 px-4 py-3 text-sm"
             >
-              <p className="w-24 text-gray-700">{kode}</p>
-              <p className="flex-1 text-gray-900">{namaProduk}</p>
+              <p className="w-24 text-gray-700">{tanggal}</p>
+              <p className="w-24 text-gray-700">{noFaktur}</p>
+              <p className="flex-1 text-gray-900">{namaBarang}</p>
               <div className="w-28">
                 <p className="inline-block rounded-md bg-blue-50 px-2 py-1 text-xs text-blue-700">
                   {kategori}
                 </p>
               </div>
-              <p className="w-16 text-gray-700">{stok}</p>
+              <p className="w-28 flex text-gray-700">{jumlahUnit}</p>
+              <p className="w-28 text-gray-700">{asal}</p>
+              <p className="w-28 text-gray-700">{lokasi}</p>
               <div className="flex w-16 items-center justify-end gap-3 text-gray-400">
                 <button
                   type="button"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-blue-50 hover:text-blue-600 cursor-pointer"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-blue-50 hover:text-blue-600 cursor-pointer"
                 >
                   <Pencil size={16} />
                 </button>
-
                 <button
                   onClick={() => onClickDelete(id)}
                   type="button"
@@ -124,8 +135,8 @@ const Product = () => {
                 </button>
               </div>
             </div>
-          );
-        })}
+          ),
+        )}
       </div>
 
       {/* modal */}

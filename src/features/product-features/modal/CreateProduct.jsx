@@ -8,23 +8,17 @@ const CreatePenerimaan = ({
   onAdd = () => {},
 }) => {
   const [status, setOnStatus] = useState({
-    kode: "PRD-001",
-    namaProduk: "PC Rakitan i5",
+    noFaktur: "",
+    namaBarang: "",
     kategori: "PC",
-    stok: "6",
-
-    // jenisAsal: "Pembelian",
-    // asal: "",
-    // tanggal: new Date().toISOString().slice(0, 10),
-    // lokasi: "Ruang IT",
+    jumlahUnit: "1",
+    jenisAsal: "",
+    asal: "",
+    tanggal: "",
+    lokasi: "",
   });
 
   console.log(status);
-
-  //   const kodeChange = (event) => {
-  //     setOnStatus((prev) => {
-  //       return { ...prev, kode: event.target.value };
-  //     });
   const onChangeForm = (e) => {
     const { name, value } = e.target;
     setOnStatus((prev) => {
