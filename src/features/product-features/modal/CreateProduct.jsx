@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 import Modal from "@/components/Modal";
 import { useState } from "react";
 
-const CreatePenerimaan = ({
+const CreateProduct = ({
   showModal = false,
   onClose = () => {},
   onAdd = () => {},
@@ -148,4 +148,4 @@ const CreatePenerimaan = ({
   );
 };
 
-export default CreatePenerimaan;
+export default CreateProduct;
