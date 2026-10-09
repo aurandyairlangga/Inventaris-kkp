@@ -50,10 +50,10 @@ const Product = () => {
       <div className="flex items-center justify-between mb-6">
         <p className="text-xl font-semibold text-gray-900">Produk</p>
         <Button
+          icon={<Plus size={16} />}
           onClick={() => setShowModal(true)}
           className="flex items-center gap-2"
         >
-          <Plus size={16} />
           Tambah produk
         </Button>
       </div>

@@ -1,6 +1,7 @@
 import cn from "@/utils/cn";
 
 const Button = ({
+  icon,
   children = null,
   variant = "primary",
   className = "",
@@ -25,6 +26,7 @@ const Button = ({
       )}
       {...props}
     >
+      {icon}
       {children}
     </button>
   );
