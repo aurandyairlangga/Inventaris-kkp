@@ -1,4 +1,4 @@
-import Cards from "@/components/Cards";
+import Cards from "@/components/Card";
 import cn from "@/utils/cn";
 import { Monitor, Mouse, NotebookPen, Printer } from "lucide-react";
 

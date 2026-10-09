@@ -4,7 +4,7 @@ import AllCustomers from "./AllCustomers";
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-y-8">
       <div className="flex justify-between mt-6">
         <div className="flex ml-20 font-medium text-2xl">
           <h1>Hallo Aurandy</h1>

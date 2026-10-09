@@ -7,7 +7,7 @@ const CreatePenerimaan = ({
   onClose = () => {},
   onAdd = () => {},
 }) => {
-  const [status, setOnStatus] = useState({
+  const [product, setOnProduct] = useState({
     noFaktur: "",
     namaBarang: "",
     kategori: "PC",
@@ -18,17 +18,17 @@ const CreatePenerimaan = ({
     lokasi: "",
   });
 
-  console.log(status);
+  console.log(product);
   const onChangeForm = (e) => {
     const { name, value } = e.target;
-    setOnStatus((prev) => {
+    setOnProduct((prev) => {
       return { ...prev, [name]: value };
     });
   };
 
   const onSubmit = () => {
-    console.log("formModal", status);
-    onAdd({ ...status, id: Date.now() });
+    console.log("formModal", product);
+    onAdd({ ...product, id: Date.now() });
     onClose();
   };
 

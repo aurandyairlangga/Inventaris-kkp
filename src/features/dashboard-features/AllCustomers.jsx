@@ -3,7 +3,7 @@ import DashboardCard from "./DashboardCard";
 
 const AllCustomers = () => {
   return (
-    <DashboardCard className="pl-6 pt-7 pr-11 mt-8">
+    <DashboardCard className="pl-6 pt-7 pr-11">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
         <div>

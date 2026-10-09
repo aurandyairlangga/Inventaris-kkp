@@ -2,16 +2,17 @@ import { Plus, Pencil, Trash2, Search, Package } from "lucide-react";
 import { useState } from "react";
 import CategoryCards from "./CategoryCards";
 import CreateProduct from "./modal/CreateProduct";
-import Cards from "../../components/Cards";
 import Button from "@/components/Button";
-import Modal from "@/components/Modal";
 import DeleteProduct from "./modal/DeleteProduct";
+import Cards from "@/components/Card";
 
 const Product = () => {
   const [productList, setProductList] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
+
   const onClose = () => setShowModal(false);
+
   const [selectProductId, setSelectProductId] = useState(null);
 
   const onAddProduk = (data) => {
@@ -30,9 +31,9 @@ const Product = () => {
 
   const onDeleteProduct = () => {
     setProductList((prev) => {
-      const hasil = prev.filter((status) => {
-        console.log(status.id, selectProductId);
-        if (status.id !== selectProductId) {
+      const hasil = prev.filter((product) => {
+        console.log(product.id, selectProductId);
+        if (product.id !== selectProductId) {
           return true;
         } else {
           return false;

@@ -1,4 +1,4 @@
-import cn from "../utils/cn";
+import cn from "@/utils/cn";
 
 const Button = ({
   children = null,
@@ -21,7 +21,7 @@ const Button = ({
       className={cn(
         "rounded-xl px-4 py-2 w-fit cursor-pointer transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed",
         buttonVariant[variant],
-        className
+        className,
       )}
       {...props}
     >

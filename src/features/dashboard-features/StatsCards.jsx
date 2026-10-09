@@ -1,12 +1,6 @@
-import Cards from "@/components/Cards";
+import Card from "@/components/Card";
 import cn from "@/utils/cn";
-import {
-  Package,
-  CheckCircle2,
-  ArrowLeftRight,
-  Wrench,
-  XCircle,
-} from "lucide-react";
+import { Package, CheckCircle2, ArrowLeftRight, Wrench } from "lucide-react";
 
 // Satu objek = satu kotak. Ada 5 objek, jadi muncul 5 kotak.
 const cards = [
@@ -38,13 +32,12 @@ const cards = [
 
 const StatsCards = () => {
   return (
-    <div className="mt-8">
-      <p className="mb-2 text-xs font-medium text-gray-500">Ringkasan</p>
+    <div>
       {/* 2 kolom di layar kecil, 5 kolom di layar lebar */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {cards.map(({ name, icon, bgIcon, total }) => {
           return (
-            <Cards key={name}>
+            <Card key={name}>
               <div
                 className={cn(
                   "mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl",
@@ -55,7 +48,7 @@ const StatsCards = () => {
               </div>
               <p className="text-sm text-gray-700">{name}</p>
               <p className="text-base font-semibold text-gray-900">{total}</p>
-            </Cards>
+            </Card>
           );
         })}
       </div>
