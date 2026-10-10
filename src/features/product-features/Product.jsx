@@ -10,10 +10,16 @@ const Product = () => {
   const [productList, setProductList] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
-
-  const onClose = () => setShowModal(false);
-
   const [selectProductId, setSelectProductId] = useState(null);
+
+  const editingProduct = productList.find(
+    (product) => product.id === selectProductId,
+  );
+
+  const onClose = () => {
+    setShowModal(false);
+    setSelectProductId(null);
+  };
 
   const onAddProduk = (data) => {
     setProductList((prev) => {
@@ -21,8 +27,23 @@ const Product = () => {
     });
   };
 
-  const onSelectProduct = (kode) => {};
+  const onEditProduct = (editingProduct) => {
+    setProductList((prev) => {
+      const result = prev.map((product) => {
+        if (product.id === selectProductId) {
+          return editingProduct;
+        } else {
+          return product;
+        }
+      });
+      return result;
+    });
+  };
 
+  const onCLickEdit = (kode) => {
+    setSelectProductId(kode);
+    setShowModal(true);
+  };
   const onClickDelete = (kode) => {
     console.log("kode", kode);
     setSelectProductId(kode);
@@ -122,6 +143,7 @@ const Product = () => {
               <p className="w-28 text-gray-700">{lokasi}</p>
               <div className="flex w-16 items-center justify-end gap-3 text-gray-400">
                 <button
+                  onClick={() => onCLickEdit(id)}
                   type="button"
                   className="flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-blue-50 hover:text-blue-600 cursor-pointer"
                 >
@@ -141,11 +163,16 @@ const Product = () => {
       </div>
 
       {/* modal */}
-      <CreateProduct
-        showModal={showModal}
-        onClose={setShowModal}
-        onAdd={onAddProduk}
-      />
+      {showModal && (
+        <CreateProduct
+          showModal={showModal}
+          onClose={onClose}
+          onAdd={onAddProduk}
+          onEdit={onEditProduct}
+          defaultValue={editingProduct}
+        />
+      )}
+
       <DeleteProduct
         showModalDelete={showModalDelete}
         closeModalDelete={setShowModalDelete}
