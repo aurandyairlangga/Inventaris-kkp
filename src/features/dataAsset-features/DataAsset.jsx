@@ -53,7 +53,7 @@ const DataAsset = () => {
                 <td className="py-2.5 font-medium text-slate-700">LAP-002</td>
                 <td className="py-2.5">Lenovo ThinkPad E14</td>
                 <td className="py-2.5">Laptop</td>
-                <td className="py-2.5">Lantai 2</td>
+                <td className="py-2.5">Gudang</td>
                 <td className="py-2.5">
                   <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
                     Dipinjam
@@ -64,7 +64,7 @@ const DataAsset = () => {
                 <td className="py-2.5 font-medium text-slate-700">PRI-001</td>
                 <td className="py-2.5">Epson L3210</td>
                 <td className="py-2.5">Printer</td>
-                <td className="py-2.5">Lantai 2</td>
+                <td className="py-2.5">Gudang</td>
                 <td className="py-2.5">
                   <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
                     Perbaikan

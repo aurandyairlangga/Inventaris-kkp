@@ -6,7 +6,7 @@ const defaultForm = {
   noFaktur: "",
   namaBarang: "",
   kategori: "PC",
-  jumlahUnit: "",
+  jumlahUnit: "1",
   jenisAsal: "Pembelian",
   asal: "",
   tanggal: "",
@@ -91,8 +91,8 @@ const CreateProduct = ({
           <div>
             <p className="mb-1 block text-sm text-gray-800">Jumlah Unit</p>
             <input
-              value={product.jumlah}
-              name="jumlah"
+              value={product.jumlahUnit}
+              name="jumlahUnit"
               type="number"
               min="1"
               onChange={onChangeForm}
