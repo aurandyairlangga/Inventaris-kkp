@@ -108,8 +108,8 @@ const Product = () => {
 
       <ProductTable
         productList={productList}
-        onEdit={onEditProduct}
-        onDelete={onDeleteProduct}
+        onEdit={onCLickEdit}
+        onDelete={onClickDelete}
       />
       {/* modal */}
       {showModal && (

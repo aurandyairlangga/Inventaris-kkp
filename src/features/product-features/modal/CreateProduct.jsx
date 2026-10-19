@@ -36,7 +36,11 @@ const CreateProduct = ({
     if (isEdit) {
       onEdit(product);
     } else {
-      onAdd({ ...product, id: Date.now() });
+      onAdd({
+        ...product,
+        id: Date.now(),
+        kodeBarang: `${product.kategori}-0${Math.round(Math.random() * 10)}`,
+      });
     }
     onClose();
   };

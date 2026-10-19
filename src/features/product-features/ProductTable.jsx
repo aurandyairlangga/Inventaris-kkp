@@ -36,9 +36,9 @@ const ProductTable = ({
     {
       key: "asal",
       header: "Asal",
-      cell: (value) => value,
+      cell: (asal, product) => `${product.jenisAsal} - ${asal}`,
     },
-    { key: "lokasi", header: "Kode Barang", cell: (value) => value },
+    { key: "kodeBarang", header: "Kode Barang", cell: (value) => value },
     {
       key: "id",
       header: "Aksi",
@@ -47,7 +47,6 @@ const ProductTable = ({
           <button
             onClick={() => onEdit(id)}
             type="button"
-            aria-label="Edit"
             className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg transition-colors hover:bg-blue-50 hover:text-blue-600"
           >
             <Pencil size={16} />
@@ -55,7 +54,6 @@ const ProductTable = ({
           <button
             onClick={() => onDelete(id)}
             type="button"
-            aria-label="Hapus"
             className="cursor-pointer hover:text-red-600"
           >
             <Trash2 size={16} />
