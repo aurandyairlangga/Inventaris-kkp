@@ -11,7 +11,7 @@ const DataAsset = () => {
 
       <div className="rounded-xl border border-slate-200 bg-white p-4">
         <div className="mb-4 flex flex-wrap gap-3">
-          <div className="relative min-w-[200px] flex-1">
+          <div className="relative min-w-50 flex-1">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
             <input
               placeholder="Cari nomor faktur atau nama aset"
@@ -27,7 +27,7 @@ const DataAsset = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[520px] text-left text-sm">
+          <table className="w-full min-w-130 text-left text-sm">
             <thead>
               <tr className="border-b border-slate-200 text-slate-500">
                 <th className="py-2 font-medium">No Faktur</th>
