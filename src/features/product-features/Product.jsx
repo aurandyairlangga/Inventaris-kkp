@@ -7,6 +7,7 @@ import DeleteProduct from "./modal/DeleteProduct";
 import Cards from "@/components/Card";
 import ProductTable from "@/features/product-features/ProductTable";
 import Table from "@/components/Table";
+import ProductForm from "../ProductForm";
 
 const Product = () => {
   const [productList, setProductList] = useState([]);

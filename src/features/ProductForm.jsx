@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 const ProductForm = () => {
-  const styleClassName = "border p-2";
+  const styleClassName = "flex border border-black-200 rounded-lg p-2";
   const [productData, setProductData] = useState(null);
+  const [selectedId, setSelectedId] = useState("");
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
@@ -14,7 +15,7 @@ const ProductForm = () => {
     try {
       const response = await fetch("https://fakestoreapi.com/products", {
         method: "POST",
-        header: {
+        headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(productData),
@@ -28,7 +29,7 @@ const ProductForm = () => {
   const deleteProduct = async () => {
     try {
       const responseDelete = await fetch(
-        "https://fakestoreapi.com/products/1",
+        `https://fakestoreapi.com/products/${selectedId}`,
         {
           method: "DELETE",
         },
@@ -50,30 +51,40 @@ const ProductForm = () => {
       />
       <input
         name="price"
-        placeholder="Masukan Title"
+        placeholder="Masukan Price"
         className={styleClassName}
         onChange={onChangeInput}
       />
       <input
         name="description"
-        placeholder="Masukan Title"
+        placeholder="Masukan Description"
         className={styleClassName}
         onChange={onChangeInput}
       />
       <input
         name="category"
-        placeholder="Masukan Title"
+        placeholder="Masukan Category"
         className={styleClassName}
         onChange={onChangeInput}
       />
       <input
         name="image"
-        placeholder="Masukan Title"
+        placeholder="Masukan Image"
         className={styleClassName}
         onChange={onChangeInput}
       />
-
-      <button type="button">hapus</button>
+      <button onClick={createProduct} className="border rounded-lg bg-blue-600">
+        submit
+      </button>
+      <input
+        name=""
+        placeholder=""
+        onChange={(e) => setSelectedId(e.target.value)}
+        className={styleClassName}
+      />
+      <button onClick={deleteProduct} className="border rounded-lg bg-red-600">
+        Delete
+      </button>
     </div>
   );
 };
