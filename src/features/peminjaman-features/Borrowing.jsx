@@ -1,3 +1,4 @@
+import GetDummyUser from "../GetDummyUser";
 import GetFrom from "../GetFrom";
 import ProductForm from "../ProductForm";
 
@@ -8,7 +9,10 @@ const Borrowing = () => {
       {/* product table */}
       {/* <ProductForm /> */}
       {/* Get API */}
-      <GetFrom />
+      {/* <GetFrom /> */}
+
+      {/* dummy json */}
+      <GetDummyUser />
     </div>
   );
 };
